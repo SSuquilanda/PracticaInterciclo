@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,17 @@ import { Component, OnInit } from '@angular/core';
     </ul>
   `
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   messages: string[] = [];
 
-  ngOnInit() {
-    const ws = new WebSocket('ws://localhost:8081');
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-    ws.onmessage = (event) => {
-      this.messages.push(event.data);
-    };
+  ngOnInit() {
+    if (isPlatformBrowser(this.platformId)) {
+      const ws = new WebSocket('ws://localhost:8081');
+      ws.onmessage = (event) => {
+        this.messages.push(event.data);
+      };
+    }
   }
 }
