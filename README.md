@@ -1,4 +1,4 @@
-# Proyecto Docker Compose: Angular + Apache + WebSocket
+# Proyecto Docker Compose: Angular, Apache, WebSocket
 
 ### Nombre: Samantha Suquilanda
 ### Materia: Sistemas Distribuidos
