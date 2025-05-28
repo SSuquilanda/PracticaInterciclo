@@ -9,7 +9,7 @@ wss.on('connection', ws => {
   const interval = setInterval(() => {
     const msg = `Mensaje del servidor: ${new Date().toLocaleTimeString()}`;
     ws.send(msg);
-  }, 3000);
+  }, 5000);
 
   ws.on('close', () => {
     console.log('Cliente desconectado');
