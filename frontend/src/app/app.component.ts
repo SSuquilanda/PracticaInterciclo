@@ -4,7 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-root',
   template: `
-    <h1>¡Bienvenido a la aplicación distribuida!</h1>
+    <h1> Bienvenido a la aplicación distribuida </h1>
     <div>Mensajes del servidor:</div>
     <ul>
       <li *ngFor="let msg of messages">{{ msg }}</li>
